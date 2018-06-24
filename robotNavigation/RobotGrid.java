@@ -1,4 +1,4 @@
-//Created by: Brandon Lavinsky & Madison Pahl
+//Created by: Madison Pahl
 
 import java.util.LinkedList;
 import java.io.BufferedReader;

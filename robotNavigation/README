@@ -1,0 +1,37 @@
+README
+
+Name: Madison Pahl
+
+Project Scope:
+
+A robot represented as a point moves in a regular two-dimensional NxN grid (e.g., N =
+100). Each point of the grid is either "free" or "forbidden" (obstacle). From any position (i,j)
+in the grid the robot can reach each of the 4 adjacent positions (i,j-1), (i,j+1), (i-1,j), (i+1,j),
+if it is not forbidden. A navigation problem consists of finding a path in the grid (sequence
+of adjacent free points) that connects a given initial position to a given goal position. Each
+move has a cost of 1. 
+
+Write a program implementing the Best-First Search algorithm to solve this problem. To do this, first
+formulate the navigation problem as a search problem: what are the states, the successor function,
+the initial and goal states? Allowing the search tree to contain nodes labeled by the same state leads
+to an infinite search tree. So, the program should avoid duplicating states.
+You should have sections in your program to test each of the following four evaluation
+functions:
+- f(N) = Euclidean distance from N to the goal (Strategy 1)
+(i.e. the length of a straight line between two points, E((i,j),(i',j')) = sqrt[(i-i')^2+(j-j')^2])
+- f(N) = Manhattan distance to the goal (Strategy 2)
+(i.e. the length of the shortest path obtainable by traversing only in the cardinal
+directions, ignoring any obstacles, M((i,j),(i',j')) = |i-i'| + |j-j'|) 
+- f(N) = g(N) + h(N), where:
+- g(N) is the cost of the path found so far from the initial node toN
+- h(N) is: - the Euclidean distance from N to the goal (Strategy 3)
+ - the Manhattan distance to the goal (Strategy 4)
+Thought question: Is the algorithm A* with the last two functions? If yes, which of the two h
+should produce the smallest search tree?
+For each problem-function pair, your program should output the generated path, its cost, and the
+number of nodes in the search tree when the solution was found. 
+
+References:
+https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html
+https://stackoverflow.com/questions/207947/how-do-i-get-a-platform-dependent-new-line-character
+https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html
